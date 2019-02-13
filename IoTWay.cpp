@@ -89,7 +89,7 @@ void IoTWayStatus ()
 
     int encryptedSize = strlen (plainData) + (16 - (strlen (plainData) % 16));
 
-    char encrypted[encryptedSize];
+    byte encrypted[encryptedSize];
     char base64Data[2*encryptedSize];
     // aesLib.encrypt64(plainData, encrypted, key, iv);
     aes.do_aes_encrypt ((unsigned char *)plainData, strlen (plainData), encrypted, key, 128, iv);
@@ -165,7 +165,7 @@ void IoTWaySignals (const short int count, ...)
 
     int encryptedSize = strlen (plainData) + (16 - (strlen (plainData) % 16));
 
-    char encrypted[encryptedSize];
+    byte encrypted[encryptedSize];
     char base64Data[2*encryptedSize];
     // aesLib.encrypt64(plainData, encrypted, key, iv);
     aes.do_aes_encrypt ((unsigned char *)plainData, strlen (plainData), encrypted, key, 128, iv);
@@ -233,7 +233,7 @@ void IoTWayMessage (const char *message, const int type){
 
     int encryptedSize = strlen (plainData) + (16 - (strlen (plainData) % 16));
 
-    char encrypted[encryptedSize];
+    byte encrypted[encryptedSize];
     char base64Data[2*encryptedSize];
     // aesLib.encrypt64(plainData, encrypted, key, iv);
     aes.do_aes_encrypt ((unsigned char *)plainData, strlen (plainData), encrypted, key, 128, iv);
